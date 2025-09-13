@@ -1,0 +1,235 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import Logo from '../assets/Logo.png';
+import Propaganda from '../assets/Propaganda1.png';
+import Imagem2 from '../assets/moneybox.png';
+import Money from '../assets/money.png';
+import Carteira from '../assets/carteira.png';
+import Certificado from '../assets/kidsafe.png';
+import Propaganda2 from '../assets/PROPAGANDA2.png';
+import DarkMode from '../assets/dark-mode.png';
+
+const Home = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div className="relative bg-[#F5F0E1] w-full min-h-screen">
+      
+      {/* MOBILE */}
+      <div className="md:hidden bg-[#F5F0E1]">
+        <div className="flex justify-between items-center px-6 pt-5">
+          <img src={Logo} alt="Logo" className="w-32 h-8" />
+          <div className="flex items-center gap-3">
+            <img src={DarkMode} alt="Dark Mode" className="w-[33px] h-[33px] cursor-pointer"/>
+            <button onClick={() => navigate('/')} className="px-4 py-2 bg-[#ec5c8f] rounded-2xl text-[#f5f0e1] text-sm font-bold">
+              JOGUE AGORA!
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-6 px-4 relative">
+          <img src={Propaganda} alt="Propaganda" className="w-full h-auto rounded-xl" />
+          <button onClick={() => navigate('/passos')}
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-64 h-14 bg-[#f5c2c2] rounded-full text-white font-bold text-lg">
+            CONHEÇA AGORA!
+          </button>
+        </div>
+
+        <div className="mt-12 px-6 text-center">
+          <h2 className="text-[#1a2e45] text-2xl font-bold mb-4">Diferencial do Projeto</h2>
+          <p className="text-[#1a2e45] text-sm">
+            Une design lúdico com funcionalidades educativas, como desafios semanais and feedbacks personalizados, 
+            promovendo o engajamento contínuo da criança no aprendizado financeiro de maneira prática e atrativa.
+          </p>
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <img src={Imagem2} alt="Imagem 2" className="w-52 h-52" />
+        </div>
+
+        <div className="mt-12 bg-[#f4d9d1] rounded-xl p-6 text-center">
+          <h2 className="text-[#1a2e45] text-2xl font-bold mb-4">Público alvo</h2>
+          <p className="text-[#1a2e45] text-sm mb-6 max-w-xs mx-auto">
+            Crianças entre 5 e 10 anos em fase de alfabetização financeira, além de pais e responsáveis que desejam introduzir noções de valor do dinheiro, metas and responsabilidade financeira de forma acessível, segura e divertida.
+          </p>
+          <img src={Money} alt="Money" className="w-52 h-52 mx-auto" />
+        </div>
+
+        {/* Objetivo - Mobile */}
+        <div className="mt-12 px-6 text-center">
+          <h2 className="text-[#1a2e45] text-2xl font-bold mb-4">Objetivo</h2>
+          <p className="text-[#1a2e45] text-sm max-w-xs mx-auto">
+            Estimular hábitos financeiros saudáveis desde a infância por meio de um cofre inteligente que utiliza recursos tecnológicos para incentivar o planejamento, a economia e o consumo consciente.
+          </p>
+        </div>
+        <div className="mt-12 flex justify-center">
+          <img src={Carteira} alt="Carteira" className="w-52 h-52" />
+        </div>
+
+        <div className="mt-12 flex justify-center">
+          <img src={Logo} alt="Logo" className="w-32 h-8" />
+        </div>
+
+        <div className="mt-12 flex flex-wrap justify-center gap-4 px-4">
+          <div className="w-40 h-40 bg-[#f5c2c2] rounded-xl flex items-center justify-center text-center p-2">
+            <span className="text-[#f5f0e1] text-base font-bold">Ambiente seguro</span>
+          </div>
+          <div className="w-40 h-40 bg-[#EC5C8F] rounded-xl flex items-center justify-center text-center p-2">
+            <span className="text-[#f5f0e1] text-base font-bold">Conteúdo personalizado</span>
+          </div>
+          <div className="w-40 h-40 bg-[#f5c2c2] rounded-xl flex items-center justify-center text-center p-2">
+            <span className="text-[#f5f0e1] text-base font-bold">Interação 100% gratuita</span>
+          </div>
+          <div className="w-40 h-40 bg-[#EC5C8F] rounded-xl flex items-center justify-center text-center p-2">
+            <span className="text-[#f5f0e1] text-base font-bold">Proximidade familiar</span>
+          </div>
+        </div>
+
+        <div className="mt-12 bg-[#f4d9d1] rounded-t-xl w-full p-6 pb-36 text-center">
+          <h2 className="text-[#1a2e45] text-2xl font-bold mb-4">Tudo bem, é<br />SmartCoinc!</h2>
+          <p className="text-[#1a2e45] text-lg mb-6">As crianças amam. As famílias confiam.</p>
+
+          <div className="mt-6 mx-4 bg-white rounded-lg p-4 text-center">
+            <img src={Certificado} alt="Certificado" className="w-40 h-14 mx-auto mb-3" />
+            <p className="text-[#1a2e45] text-sm">
+              O programa kidSAFE Seal certifica a segurança de sites, aplicativos e produtos interativos voltados para crianças, garantindo que atendam a padrões independentes de segurança infantil.
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center gap-4 mt-6">
+            <button onClick={() => navigate('/artigo')} className="w-full max-w-xs h-16 bg-[#EC5C8F] rounded-2xl text-white font-bold text-lg" >
+              NOSSOS ARTIGOS
+            </button>
+            <button onClick={() => navigate('/equipe')} className="w-full max-w-xs h-16 bg-white rounded-2xl text-[#1CB0F6] font-bold text-lg border border-[#1CB0F6]">
+              NOSSA EQUIPE
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* DESKTOP */}
+      <div className="hidden md:block bg-[#F5F0E1] min-h-screen">
+        
+        {/* Navbar */}
+        <div className="flex justify-between items-center px-12 py-6 bg-[#F5F0E1]">
+          <img src={Logo} alt="Logo" className="w-40 h-10 cursor-pointer" />
+          
+          <div className="flex itemsCenter gap-8">
+            <nav className="flex gap-8">
+              <span className="text-[#1A2E45] cursor-pointer hover:text-[#EC5C8F] transition-colors font-semibold">Início</span>
+              <span className="text-[#1A2E45] cursor-pointer hover:text-[#EC5C8F] transition-colors font-semibold" onClick={() => navigate('/produtos')}>Produtos</span>
+              <span className="text-[#1A2E45] cursor-pointer hover:text-[#EC5C8F] transition-colors font-semibold" onClick={() => navigate('/artigos')}>Artigos</span>
+              <span className="text-[#1A2E45] cursor-pointer hover:text-[#EC5C8F] transition-colors font-semibold" onClick={() => navigate('/equipe')}>Equipe</span>
+            </nav>
+            
+            <div className="flex items-center gap-4">
+              <img src={DarkMode} alt="Dark Mode" className="w-[33px] h-[33px] cursor-pointer" />
+              <button onClick={() => navigate('/jogo')} className="px-6 py-3 bg-[#ec5c8f] rounded-2xl text-[#f5f0e1] font-bold hover:bg-[#D94A7C] transition-colors">
+                JOGUE AGORA!
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Propaganda */}
+        <div className="flex justify-center mt-8 relative">
+          <div className="relative"style={{width: '90%',maxWidth: '1200px',height: '450px'}}>
+            <img src={Propaganda2} alt="Propaganda2" className="w-full h-full object-contain rounded-xl" />
+            <button onClick={() => navigate('/passos')}className="absolute bg-[#F5C2C2] rounded-[33px] px-12 py-4"style={{borderRadius: '33px',right: '98px', bottom: '70px'}}>
+              <span className="text-white font-bold text-lg">CONHEÇA AGORA!</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Diferencial */}
+        <div className="bg-[#F5F0E1] py-20 px-12">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-[#1A2E45] text-4xl font-bold text-center mb-16">
+              Diferencial do Projeto
+            </h2>
+            
+            <div className="grid grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-[#1A2E45] text-lg leading-relaxed">
+                  Une design lúdico com funcionalidades educativas, como desafios semanais and feedbacks personalizados, 
+                  promovendo o engajamento contínuo da criança no aprendizado financeiro de maneira prática e atrativa.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <img src={Imagem2} alt="Imagem 2" className="w-72 h-72" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Público Alvo */}
+        <div className="bg-[#F5F0E1] py-20 px-12">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-[#1A2E45] text-4xl font-bold text-center mb-16">
+              Público alvo
+            </h2>
+            <div className="grid grid-cols-2 gap-12 items-center">
+              <div className="flex justify-center mt-16"> 
+                <img src={Money} alt="Money" className="w-72 h-72" />
+              </div>
+              <div>
+                <p className="text-[#1A2E45] text-lg leading-relaxed">
+                  Crianças entre 5 e 10 anos em fase de alfabetização financeira, além de pais e responsáveis que desejam introduzir noções de valor do dinheiro, metas and responsabilidade financeira de forma acessível, segura e divertida.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Objetivo */}
+        <div className="bg-[#F5F0E1] py-20 px-12">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-[#1A2E45] text-4xl font-bold text-center mb-16">
+              Objetivo
+            </h2>
+            <div className="grid grid-cols-2 gap-12 items-center">
+              <div>
+                <p className="text-[#1A2E45] text-lg leading-relaxed">
+                  Estimular hábitos financeiros saudáveis desde a infância por meio de um cofre inteligente que utiliza recursos tecnológicos para incentivar o planejamento, a economia e o consumo consciente.
+                </p>
+              </div>
+              <div className="flex justify-center">
+                <img src={Carteira} alt="Carteira" className="w-72 h-72" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Rodapé */}
+        <div className="bg-[#f4d9d1] rounded-t-3xl py-12 px-8 mx-auto max-w-4xl"> 
+          <div className="text-center">
+            <h2 className="text-[#1A2E45] text-3xl font-bold mb-4"> 
+              Tudo bem, é<br />SmartCoinc!
+            </h2>
+            <p className="text-[#1A2E45] text-xl mb-6"> 
+              As crianças amam. As famílias confiam.
+            </p>
+
+            <div className="bg-white rounded-2xl p-6 max-w-md mx-auto mb-6">
+              <img src={Certificado} alt="Certificado" className="w-40 h-14 mx-auto mb-3" />
+              <p className="text-[#1A2E45] text-sm">
+                O programa kidSAFE Seal certifica a segurança de sites, aplicativos e produtos interativos voltados para crianças, garantindo que atendam a padrões independentes de segurança infantil.
+              </p>
+            </div>
+
+            <div className="flex justify-center gap-4">
+              <button onClick={() => navigate('/artigo')} className="px-8 py-2 bg-[#EC5C8F] rounded-2xl text-white font-bold text-lg hover:bg-[#D94A7C] transition-colors" >
+                NOSSOS ARTIGOS
+              </button>
+              <button onClick={() => navigate('/equipe')} className="px-8 py-2 bg-white rounded-2xl text-[#1CB0F6] font-bold text-lg border-2 border-[#1CB0F6] hover:bg-blue-50 transition-colors">
+                NOSSA EQUIPE
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Home;
