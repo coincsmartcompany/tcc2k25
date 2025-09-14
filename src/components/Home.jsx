@@ -19,11 +19,13 @@ const Home = () => {
     const savedDarkMode = localStorage.getItem('darkMode') === 'true';
     setIsDarkMode(savedDarkMode);
     
-    // Aplicar a classe ao body para o tema escuro
+    // Aplicar estilos ao body para o tema escuro
     if (savedDarkMode) {
-      document.body.classList.add('dark-mode');
+      document.body.style.backgroundColor = '#1a202c';
+      document.body.style.color = '#e2e8f0';
     } else {
-      document.body.classList.remove('dark-mode');
+      document.body.style.backgroundColor = '#F5F0E1';
+      document.body.style.color = '#000000';
     }
   }, []);
 
@@ -33,11 +35,13 @@ const Home = () => {
     setIsDarkMode(newDarkModeState);
     localStorage.setItem('darkMode', newDarkModeState.toString());
     
-    // Aplicar/remover a classe do body
+    // Aplicar/remover estilos do body
     if (newDarkModeState) {
-      document.body.classList.add('dark-mode');
+      document.body.style.backgroundColor = '#1a202c';
+      document.body.style.color = '#e2e8f0';
     } else {
-      document.body.classList.remove('dark-mode');
+      document.body.style.backgroundColor = '#F5F0E1';
+      document.body.style.color = '#000000';
     }
   };
 
@@ -49,7 +53,7 @@ const Home = () => {
         <div className="flex justify-between items-center px-6 pt-5">
           <img src={Logo} alt="Logo" className="w-32 h-8" />
           <div className="flex items-center gap-3">
-            {/* Botão Dark/Light Mode - CIRCULO REMOVIDO AQUI */}
+            {/* Botão Dark/Light Mode */}
             <button onClick={toggleDarkMode} className="p-2 transition-colors">
               <img src={isDarkMode ? LightModeIcon : DarkModeIcon} alt={isDarkMode ? "Light Mode" : "Dark Mode"} className="w-6 h-6" />
             </button>
@@ -80,9 +84,10 @@ const Home = () => {
           <img src={Imagem2} alt="Imagem 2" className="w-52 h-52" />
         </div>
 
-        <div className={`mt-12 ${isDarkMode ? 'bg-gray-800' : 'bg-[#f4d9d1]'} rounded-xl p-6 text-center`}>
+        {/* Público alvo - Mobile - COR ALTERADA AQUI */}
+        <div className={`mt-12 ${isDarkMode ? 'bg-[#EC5C8F]' : 'bg-[#f4d9d1]'} rounded-xl p-6 text-center`}>
           <h2 className={`${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} text-2xl font-bold mb-4`}>Público alvo</h2>
-          <p className={`${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} text-sm mb-6 max-w-xs mx-auto`}>
+          <p className={`${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} text-sm mb-6 max-w-xs mx-auto`}>
             Crianças entre 5 e 10 anos em fase de alfabetização financeira, além de pais e responsáveis que desejam introduzir noções de valor do dinheiro, metas and responsabilidade financeira de forma acessível, segura e divertida.
           </p>
           <img src={Money} alt="Money" className="w-52 h-52 mx-auto" />
@@ -133,7 +138,7 @@ const Home = () => {
             <button onClick={() => navigate('/artigo')} className="w-full max-w-xs h-16 bg-[#EC5C8F] rounded-2xl text-white font-bold text-lg" >
               NOSSOS ARTIGOS
             </button>
-            <button onClick={() => navigate('/equipe')} className={`w-full max-w-xs h-16 ${isDarkMode ? 'bg-gray-700 text-white border-gray-600' : 'bg-white text-[#1CB0F6] border border-[#1CB0F6]'} rounded-2xl font-bold text-lg border`}>
+            <button onClick={() => navigate('/equipe')} className={`w-full max-w-xs h-16 ${ isDarkMode ? 'bg-gray-700 text-white' : 'bg-white text-[#1CB0F6]'} rounded-2xl font-bold text-lg`}>
               NOSSA EQUIPE
             </button>
           </div>
@@ -149,14 +154,14 @@ const Home = () => {
           
           <div className="flex items-center gap-8">
             <nav className="flex gap-8">
-              <span className={`${isDarkMode ? 'text-white' : 'text-[#1A2E45]'} cursor-pointer hover:text-[#EC5C8F] transition-colors font-semibold`}>Início</span>
+              <span className={`${isDarkMode ? 'text-white' : 'text-[#1A2E45]'} cursor-pointer hover:text-[#EC5C8F] transition-colors font-semibold`} onClick={() => navigate('/passos')}>Passos</span>
               <span className={`${isDarkMode ? 'text-white' : 'text-[#1A2E45]'} cursor-pointer hover:text-[#EC5C8F] transition-colors font-semibold`} onClick={() => navigate('/produtos')}>Produtos</span>
               <span className={`${isDarkMode ? 'text-white' : 'text-[#1A2E45]'} cursor-pointer hover:text-[#EC5C8F] transition-colors font-semibold`} onClick={() => navigate('/artigo')}>Artigos</span>
               <span className={`${isDarkMode ? 'text-white' : 'text-[#1A2E45]'} cursor-pointer hover:text-[#EC5C8F] transition-colors font-semibold`} onClick={() => navigate('/equipe')}>Equipe</span>
             </nav>
             
             <div className="flex items-center gap-4">
-              {/* Botão Dark/Light Mode - CIRCULO REMOVIDO AQUI */}
+              {/* Botão Dark/Light Mode */}
               <button 
                 onClick={toggleDarkMode} 
                 className="p-2 transition-colors"
@@ -244,6 +249,30 @@ const Home = () => {
           </div>
         </div>
 
+        {/* Logo e Cards - Adicionado */}
+        <div className={`py-16 px-12 ${isDarkMode ? 'bg-gray-900' : 'bg-[#F5F0E1]'} transition-colors duration-300`}>
+          <div className="max-w-6xl mx-auto">
+            <div className="flex justify-center mb-12">
+              <img src={Logo} alt="Logo" className="w-48 h-12" />
+            </div>
+            
+            <div className="grid grid-cols-4 gap-8">
+              <div className="w-full h-60 bg-[#f5c2c2] rounded-xl flex items-center justify-center text-center p-4">
+                <span className="text-[#f5f0e1] text-xl font-bold">Ambiente seguro</span>
+              </div>
+              <div className="w-full h-60 bg-[#EC5C8F] rounded-xl flex items-center justify-center text-center p-4">
+                <span className="text-[#f5f0e1] text-xl font-bold">Conteúdo personalizado</span>
+              </div>
+              <div className="w-full h-60 bg-[#f5c2c2] rounded-xl flex items-center justify-center text-center p-4">
+                <span className="text-[#f5f0e1] text-xl font-bold">Interação 100% gratuita</span>
+              </div>
+              <div className="w-full h-60 bg-[#EC5C8F] rounded-xl flex items-center justify-center text-center p-4">
+                <span className="text-[#f5f0e1] text-xl font-bold">Proximidade familiar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Rodapé */}
         <div className={`${isDarkMode ? 'bg-gray-800' : 'bg-[#f4d9d1]'} rounded-t-3xl py-12 px-8 mx-auto max-w-4xl transition-colors duration-300`}> 
           <div className="text-center">
@@ -272,14 +301,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      {/* Estilos globais para o modo escuro */}
-      <style jsx global>{`
-        body.dark-mode {
-          background-color: #1a202c;
-          color: #e2e8f0;
-        }
-      `}</style>
     </div>
   );
 };

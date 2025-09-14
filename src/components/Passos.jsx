@@ -184,8 +184,7 @@ const Passos = () => {
           <img src={Logo2} alt="Logo" className="w-48 h-12 mb-8 cursor-pointer" onClick={() => navigate('/')}/>
 
           <div className="w-80 h-px bg-white opacity-30 mb-8"></div>
-          
-          <div className="w-full mt-12 px-8 space-y-8">
+          <div className="w-full px-8 space-y-8">
             <div className="flex items-center gap-4 cursor-pointer py-3 hover:bg-[#2a4365] rounded-lg px-4 transition-colors">
               <img src={PassoIcon} alt="Passo" className="w-6 h-6" />
               <span className="text-white text-lg font-medium">Passo a passo</span>

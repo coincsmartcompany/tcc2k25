@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Logo from '../assets/logodomenu.png';
+import Logo from '../assets/logo2.png';
 import Passo from '../assets/passos.png';
 import Informacao from '../assets/informacao.png';
 import Grupo from '../assets/grupo.png';
 import ArtigoIcon from '../assets/artigo.png';
 import Controle from '../assets/controlejogo.png';
-import Logo1 from '../assets/Logo.png';
+import Logo1 from '../assets/logo2.png';
 import DarkModeIcon from '../assets/dark-mode.png';
 import LightModeIcon from '../assets/light-mode.png';
 
@@ -187,8 +187,7 @@ const Artigo = () => {
           <img src={Logo} alt="Logo" className="w-48 h-12 mb-8 cursor-pointer" onClick={() => navigate('/')}/>
 
           <div className="w-80 h-px bg-white opacity-30 mb-8"></div>
-          
-          <div className="w-full mt-12 px-8 space-y-8">
+          <div className="w-full px-8 space-y-8">
             <div className="flex items-center gap-4 cursor-pointer py-3 hover:bg-[#2a4365] rounded-lg px-4 transition-colors" onClick={() => navigate('/passos')}>
               <img src={Passo} alt="Passo" className="w-6 h-6" />
               <span className="text-white text-lg font-medium">Passo a passo</span>

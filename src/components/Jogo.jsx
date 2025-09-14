@@ -78,18 +78,18 @@ const Jogo = () => {
             </div>
           )}
 
-          {/* Conteúdo dentro del background */}
-          <div className="pt-[400px] pb-10 px-6">
-            <div className="w-[304px] h-[99px] mx-auto mb-12">
+          {/* Conteúdo dentro del background - MODIFICADO: elementos movidos para cima */}
+          <div className="pt-[350px] pb-16 px-6"> {/* Ajuste sutil no padding-top */}
+            <div className="w-[304px] h-[99px] mx-auto mb-6"> {/* Margem inferior reduzida */}
               <h2 className="text-[24px] font-nunito font-extrabold text-[#F5F0E1] text-center leading-tight">
                 Corra, Colete e Aprenda: Seu Futuro Começa com Cada Moedinha!
               </h2>
             </div>
 
-            <div className="w-[311px] h-[154px] mx-auto mb-16">
+            <div className="w-[311px] h-[154px] mx-auto mb-8"> {/* Margem inferior reduzida */}
               <p className="text-[16px] font-nunito font-bold text-[#F5F0E1] text-center leading-tight">
                 Coin Running é um divertido jogo de corrida infinita estrelado pela criança-jogadora,
-                que controla seu próprio porquinho-cofre! Enwhile avança por cenários coloridos,
+                que controla seu próprio porquinho-cofre! Enquanto avança por cenários coloridos,
                 coleta moedas, evita gastos por impulso e aprenda a economizar dinheiro.
               </p>
             </div>
@@ -230,7 +230,7 @@ const Jogo = () => {
         </div>
       </div>
 
-      {/* DESKTOP */}
+      {/* DESKTOP - Permanece inalterado */}
       <div className="hidden md:block">
         {/* Primeira seção com imagem de fundo */}
         <div
@@ -323,7 +323,7 @@ const Jogo = () => {
               </div>
             </div>
             
-            {/* Texto "Cada Corrida..." com tamanho 32 e margem aumentada abaixo */}
+            {/* Texto "Cada Corrida..." com tamanho 32 и margem aumentada abaixo */}
             <div className="w-full px-4 mb-24">
               <h3 className="text-[32px] font-nunito font-extrabold text-[#F5F0E1] text-center leading-tight">
                 Cada Corrida Ensina, Cada Moeda Educa e Cada Escolha Constrói o Futuro
@@ -368,8 +368,7 @@ const Jogo = () => {
                 <img 
                   src={Menina} 
                   alt="Menina" 
-                  className="absolute -top-10 -ml-12 left-1/2 transform -translate-x-1/2 w-[120px] h-auto"
-                />
+                  className="absolute -top-10 -ml-12 left-1/2 transform -translate-x-1/2 w-[120px] h-auto" />
               </div>
 
               {/* Terceiro quadrado - Performance Personalizada */}
@@ -396,21 +395,17 @@ const Jogo = () => {
             {/* Parte inferior - Imagem à esquerda, texto e botão à direita */}
             <div className="flex items-start gap-16 mt-16">
               {/* Container para a imagem final com o quadrado personalizado atrás (lado esquerdo) */}
-              <div className="relative flex-shrink-0">
+              <div className="relative flex-shrink-0 ml-40">
                 <div className="absolute w-[305px] h-[305px] bg-[#F5F0E1] z-0" style={{borderTopLeftRadius: '90px', borderTopRightRadius: '35px', borderBottomLeftRadius: '35px', borderBottomRightRadius: '130px', transform: 'translate(20px, 20px)'}}></div>
                 
                 {/* Imagem final maior (sobreposta ao quadrado) */}
-                <img 
-                  src={UltimaImg} 
-                  alt="Imagem final" 
-                  className="w-75 h-75 relative z-10"
-                />
+                <img src={UltimaImg} alt="Imagem final" className="w-75 h-75 relative z-10"/>
               </div>
 
               {/* Conteúdo do lado direito - mais afastado */}
               <div className="flex flex-col ml-12">
                 {/* Texto "Para ver mais e jogar / Clique Aqui!" */}
-                <div className="flex flex-col items-start mb-10">
+                <div className="flex flex-col items-start mb-10 ml-4">
                   <p className="text-[24px] font-nunito font-bold text-white leading-tight mb-2">
                     Para ver mais e jogar
                   </p>
@@ -420,14 +415,14 @@ const Jogo = () => {
                 </div>
 
                 {/* Texto final */}
-                <div className="w-[450px] mb-10">
+                <div className="w-[450px] mb-10 ml-4">
                   <p className="text-[18px] font-nunito font-bold text-[#F5F0E1] leading-tight">
                     Ideal para crianças de 6 a 10 anos, o jogo ensina de forma lúdica a guardar, planejar e conquistar sonhos, transformando educação financeira em uma aventura cheia de desafios e recompensas. Corra com Coiny, evite armadilhas do consumo e mostre que você é um verdadeiro economista mirim!
                   </p>
                 </div>
 
                 {/* Botão de Download */}
-                <div className="flex justify-start">
+                <div className="flex justify-start ml-4">
                   <button className="bg-[#884a2e] w-[316px] h-[60px] rounded-[10px] flex items-center justify-center gap-3 shadow-lg">
                     <img src={DownloadIcon} alt="Download" className="w-[18px] h-[19px]" />
                     <span className="text-white font-nunito font-bold text-[16px]">Download do App CoinRunning</span>

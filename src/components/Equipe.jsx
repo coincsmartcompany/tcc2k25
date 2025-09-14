@@ -151,8 +151,8 @@ const Equipe = () => {
 
         <div className="grid grid-cols-2 gap-x-6 gap-y-20 pt-36 px-6 justify-center">
           {membros.map((membro, i) => (
-            <div key={i} className={`${isDarkMode ? 'bg-gray-800' : 'bg-white'} rounded-md shadow-md relative flex flex-col items-center`} style={{ width: '174px', height: '295px' }}>
-              <div className="absolute -top-[50px] rounded-full border-4 border-[#EC5C8F] shadow-lg flex justify-center items-center" style={{width: '110px', height: '110px', backgroundColor: isDarkMode ? '#374151' : '#ffffff', boxShadow: '0 4px 6px rgba(0,0,0,0.25)',}}>
+            <div key={i} className={`${isDarkMode ? 'bg-[#1A2E45]' : 'bg-white'} rounded-md shadow-md relative flex flex-col items-center`} style={{ width: '174px', height: '295px' }}>
+              <div className="absolute -top-[50px] rounded-full border-4 border-[#EC5C8F] shadow-lg flex justify-center items-center" style={{width: '110px', height: '110px', backgroundColor: isDarkMode ? '#1A2E45' : '#ffffff', boxShadow: '0 4px 6px rgba(0,0,0,0.25)',}}>
                 <img src={membro.img} alt="Membro" className="w-[75px] h-[75px] rounded-full" />
               </div>
 
@@ -204,7 +204,6 @@ const Equipe = () => {
           <img src={Logo2} alt="Logo" className="w-48 h-12 mb-6 cursor-pointer" onClick={() => navigate('/')} />
 
           <div className="w-80 h-px bg-white opacity-30 mb-8"></div>
-
           <div className="w-full px-8 space-y-8">
             <div className="flex items-center gap-4 cursor-pointer py-3 hover:bg-[#2a4365] rounded-lg px-4 transition-colors" onClick={() => navigate('/passos')} >
               <img src={passos} alt="Passo" className="w-6 h-6" />
@@ -263,9 +262,9 @@ const Equipe = () => {
 
           <div className="flex justify-center gap-8">
             {membros.map((membro, i) => (
-              <div key={i} className={`${isDarkMode ? 'bg-gray-800' : 'bg-white'} shadow-lg rounded-lg p-6 flex flex-col items-center relative`} style={{ width: '250px', height: '437px', flexShrink: 0, }} >
+              <div key={i} className={`${isDarkMode ? 'bg-[#1A2E45]' : 'bg-white'} shadow-lg rounded-lg p-6 flex flex-col items-center relative`} style={{ width: '250px', height: '437px', flexShrink: 0, }} >
              
-                <div className="absolute -top-16 rounded-full border-6 border-[#EC5C8F] overflow-hidden flex justify-center items-center" style={{ width: '170px', height: '170px', backgroundColor: isDarkMode ? '#374151' : '#ffffff' }}>
+                <div className="absolute -top-16 rounded-full border-6 border-[#EC5C8F] overflow-hidden flex justify-center items-center" style={{ width: '170px', height: '170px', backgroundColor: isDarkMode ? '#1A2E45' : '#ffffff' }}>
                 
                   <img src={membro.img} alt="Membro" className="w-[130px] h-[130px] rounded-full object-cover" />
                 </div>
