@@ -1,26 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Logo from '../assets/Logo.png';
+import Logo from '../assets/logo2.png';
 import Imagem1 from '../assets/img1.png';
 import Imagem2 from '../assets/img2.png';
 import Imagem3 from '../assets/img3.png';
 import Imagem4 from '../assets/img4.png';
-import Passo from '../assets/passos.png';
+import PassoIcon from '../assets/passos.png';
 import Informacao from '../assets/informacao.png';
 import Grupo from  '../assets/grupo.png';
-import Artigo from '../assets/artigo.png';
+import ArtigoIcon from '../assets/artigo.png';
 import Controle from '../assets/controlejogo.png';
 import Logo2 from '../assets/logodomenu.png';
-import DarkMode from '../assets/dark-mode.png';
-import Sol from '../assets/sol.png'; 
+import DarkModeIcon from '../assets/dark-mode.png';
+import LightModeIcon from '../assets/light-mode.png'; 
 
 const Passos = () => {
   const navigate = useNavigate();
-
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Verificar se há preferência salva no localStorage ao carregar a página
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+    setIsDarkMode(savedDarkMode);
+    
+    // Aplicar a classe ao body para o tema escuro
+    if (savedDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, []);
+
+  // Função para alternar o modo escuro
+  const toggleDarkMode = () => {
+    const newDarkModeState = !isDarkMode;
+    setIsDarkMode(newDarkModeState);
+    localStorage.setItem('darkMode', newDarkModeState.toString());
+    
+    // Aplicar/remover a classe do body
+    if (newDarkModeState) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  };
 
   return (
-    <div className="bg-[#F5F0E1] min-h-screen w-full px-4 pt-6 relative">
+    <div className={`min-h-screen w-full px-4 pt-6 relative ${isDarkMode ? 'bg-gray-900' : 'bg-[#F5F0E1]'} transition-colors duration-300`}>
   
       {/* Mobile */}
       <div className="md:hidden">
@@ -35,7 +62,17 @@ const Passos = () => {
             <div className="w-[25px] h-[3px] bg-[#EC5C8F]"></div>
           </div>
 
-          <img src={DarkMode} alt="Dark Mode" className="w-[33px] h-[33px] cursor-pointer" />
+          {/* Botão Dark/Light Mode - CIRCULO REMOVIDO AQUI */}
+          <button 
+            onClick={toggleDarkMode} 
+            className="p-2 transition-colors"
+          >
+            <img 
+              src={isDarkMode ? LightModeIcon : DarkModeIcon} 
+              alt={isDarkMode ? "Light Mode" : "Dark Mode"} 
+              className="w-6 h-6" 
+            />
+          </button>
         </div>
 
         {menuOpen && (
@@ -44,7 +81,7 @@ const Passos = () => {
             style={{ width: '160px', height: '200px' }}
           >
             <div className="flex items-center gap-2 cursor-pointer">
-              <img src={Passo} alt="Passo" className="w-[15px] h-[15px]" />
+              <img src={PassoIcon} alt="Passo" className="w-[15px] h-[15px]" />
               <span className="text-white text-sm">Passo a passo</span>
             </div>
 
@@ -59,7 +96,7 @@ const Passos = () => {
             </div>
 
             <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/artigo')}>
-              <img src={Artigo} alt="Artigo" className="w-[15px] h-[15px]" />
+              <img src={ArtigoIcon} alt="Artigo" className="w-[15px] h-[15px]" />
               <span className="text-white text-sm">Artigo</span>
             </div>
 
@@ -79,8 +116,8 @@ const Passos = () => {
 
             <div className="text-center mx-4 mt-8">
               <em className="text-[#EC5C8F] text-lg mb-3 font-bold">PASSO 1</em>
-              <h4 className="text-[#1a2e45] text-base mb-3">Ligue seu porquinho!</h4>
-              <p className="text-[#1a2e45] text-[12px] font-normal max-w-[280px] mx-auto">
+              <h4 className={`${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} text-base mb-3`}>Ligue seu porquinho!</h4>
+              <p className={`${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} text-[12px] font-normal max-w-[280px] mx-auto`}>
                 Encontre o botão lateral e pressione para ligar o dispositivo. Pronto, seu porquinho já está acordado e pronto para ajudar você a economizar!
               </p>
             </div>
@@ -94,8 +131,8 @@ const Passos = () => {
 
             <div className="text-center mx-4 mt-8">
               <em className="text-[#EC5C8F] text-lg mb-3 font-bold">PASSO 2</em>
-              <h4 className="text-[#1a2e45] text-base mb-3">Conecte e cadastra-se</h4>
-              <p className="text-[#1a2e45] text-[12px] font-normal max-w-[280px] mx-auto">
+              <h4 className={`${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} text-base mb-3`}>Conecte e cadastra-se</h4>
+              <p className={`${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} text-[12px] font-normal max-w-[280px] mx-auto`}>
                 Ative o Bluetooth do seu celular, conecte ao porquinho e faça o cadastro no aplicativo. Em poucos toques, você já pode começar a usar.
               </p>
             </div>
@@ -109,8 +146,8 @@ const Passos = () => {
 
             <div className="text-center mx-4 mt-8">
               <em className="text-[#EC5C8F] text-lg mb-3 font-bold">PASSO 3</em>
-              <h4 className="text-[#1a2e45] text-base mb-3">Deposite seu dinheiro</h4>
-              <p className="text-[#1a2e45] text-[12px] font-normal max-w-[280px] mx-auto">
+              <h4 className={`${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} text-base mb-3`}>Deposite seu dinheiro</h4>
+              <p className={`${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} text-[12px] font-normal max-w-[280px] mx-auto`}>
                 Coloque o dinheiro na abertura superior do porquinho. Ele vai guardar tudinho com segurança!
               </p>
             </div>
@@ -123,10 +160,10 @@ const Passos = () => {
             </div>
             <div className="text-center mx-4 mt-8">
               <em className="text-[#EC5C8F] text-lg mb-3 font-bold">PASSO 4</em>
-              <h4 className="text-[#1a2e45] text-base mb-3">Quer retirar o dinheiro?</h4>
-              <p className="text-[#1a2e45] text-[12px] font-normal max-w-[280px] mx-auto">
+              <h4 className={`${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} text-base mb-3`}>Quer retirar o dinheiro?</h4>
+              <p className={`${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} text-[12px] font-normal max-w-[280px] mx-auto`}>
                 É só abrir o compartimento que fica na partede baixo. Mas lembre-se: economizar também é um superpoder!
-              </p>
+                </p>
             </div>
           </div>
 
@@ -141,7 +178,7 @@ const Passos = () => {
       </div>
      
       {/* Desktop */}
-      <div className="hidden md:block bg-[#F5F0E1] min-h-screen">
+      <div className="hidden md:block min-h-screen">
        
         <div className="fixed left-0 top-0 w-[350px] h-full bg-[#1A2E45] z-10 flex flex-col items-center pt-12">
           <img src={Logo2} alt="Logo" className="w-48 h-12 mb-8 cursor-pointer" onClick={() => navigate('/')}/>
@@ -150,7 +187,7 @@ const Passos = () => {
           
           <div className="w-full mt-12 px-8 space-y-8">
             <div className="flex items-center gap-4 cursor-pointer py-3 hover:bg-[#2a4365] rounded-lg px-4 transition-colors">
-              <img src={Passo} alt="Passo" className="w-6 h-6" />
+              <img src={PassoIcon} alt="Passo" className="w-6 h-6" />
               <span className="text-white text-lg font-medium">Passo a passo</span>
             </div>
 
@@ -165,7 +202,7 @@ const Passos = () => {
             </div>
 
             <div className="flex items-center gap-4 cursor-pointer py-3 hover:bg-[#2a4365] rounded-lg px-4 transition-colors" onClick={() => navigate('/artigo')}>
-              <img src={Artigo} alt="Artigo" className="w-6 h-6" />
+              <img src={ArtigoIcon} alt="Artigo" className="w-6 h-6" />
               <span className="text-white text-lg font-medium">Artigo</span>
             </div>
 
@@ -174,10 +211,21 @@ const Passos = () => {
               <span className="text-white text-lg font-medium">Jogo</span>
             </div>
 
-            <div className="flex items-center gap-4 cursor-pointer py-3 hover:bg-[#2a4365] rounded-lg px-4 transition-colors" >
-              <img src={Sol} alt="Modo Claro" className="w-6 h-6" />
-            </div>
           </div>
+        </div>
+        
+        {/* Botão Dark Mode na parte superior direita - NOVA POSIÇÃO */}
+        <div className="fixed top-6 right-6 z-50">
+          <button 
+            onClick={toggleDarkMode} 
+            className="p-2 transition-colors"
+          >
+            <img 
+              src={isDarkMode ? LightModeIcon : DarkModeIcon} 
+              alt={isDarkMode ? "Light Mode" : "Dark Mode"} 
+              className="w-8 h-8" 
+            />
+          </button>
         </div>
         
         <div className="ml-[380px] mr-10 py-10">
@@ -191,8 +239,8 @@ const Passos = () => {
               </div>
               <div className="max-w-md text-center ml-54"> {/* Passo 1 mais pra direita */}
                 <i className="text-[#EC5C8F] text-3xl font-extrabold mb-6">PASSO 1</i>
-                <h4 className="text-[#1a2e45] text-2xl mb-6">Ligue seu porquinho!</h4>
-                <p className="text-[#1a2e45] text-xl leading-relaxed">
+                <h4 className={`${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} text-2xl mb-6`}>Ligue seu porquinho!</h4>
+                <p className={`${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} text-xl leading-relaxed`}>
                   Encontre o botão lateral e pressione para ligar o dispositivo. Pronto, seu porquinho já está acordado e pronto para ajudar você a economizar!
                 </p>
               </div>
@@ -205,8 +253,8 @@ const Passos = () => {
               </div>
               <div className="max-w-md text-center mr-54"> {/* Passo 2 mais pra esquerda */}
                 <i className="text-[#EC5C8F] text-3xl font-extrabold mb-6">PASSO 2</i>
-                <h4 className="text-[#1a2e45] text-2xl mb-6">Conecte e cadastra-se</h4>
-                <p className="text-[#1a2e45] text-xl leading-relaxed">
+                <h4 className={`${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} text-2xl mb-6`}>Conecte e cadastra-se</h4>
+                <p className={`${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} text-xl leading-relaxed`}>
                   Ative o Bluetooth do seu celular, conecte ao porquinho e faça o cadastro no aplicativo. Em poucos toques, você já pode começar a usar.
                 </p>
               </div>
@@ -219,8 +267,8 @@ const Passos = () => {
               </div>
               <div className="max-w-md text-center ml-54"> {/* Passo 3 mais pra direita */}
                 <i className="text-[#EC5C8F] text-3xl font-extrabold mb-6">PASSO 3</i>
-                <h4 className="text-[#1a2e45] text-2xl mb-6">Deposite seu dinheiro</h4>
-                <p className="text-[#1a2e45] text-xl leading-relaxed">
+                <h4 className={`${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} text-2xl mb-6`}>Deposite seu dinheiro</h4>
+                <p className={`${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} text-xl leading-relaxed`}>
                   Coloque o dinheiro na abertura superior do porquinho. Ele vai guardar tudinho com segurança!
                 </p>
               </div>
@@ -233,8 +281,8 @@ const Passos = () => {
               </div>
               <div className="max-w-md text-center mr-54"> {/* Passo 4 mais pra esquerda */}
                 <i className="text-[#EC5C8F] text-3xl font-extrabold mb-6">PASSO 4</i>
-                <h4 className="text-[#1a2e45] text-2xl mb-6">Quer retirar o dinheiro?</h4>
-                <p className="text-[#1a2e45] text-xl leading-relaxed">
+                <h4 className={`${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} text-2xl mb-6`}>Quer retirar o dinheiro?</h4>
+                <p className={`${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} text-xl leading-relaxed`}>
                   É só abrir o compartimento que fica na parte de baixo. Mas lembre-se: economizar também é um superpoder!
                 </p>
               </div>
@@ -243,6 +291,14 @@ const Passos = () => {
           </div>
         </div>
       </div>
+
+      {/* Estilos globais para o modo escuro */}
+      <style jsx global>{`
+        body.dark-mode {
+          background-color: #1a202c;
+          color: #e2e8f0;
+        }
+      `}</style>
     </div>
   );
 };
