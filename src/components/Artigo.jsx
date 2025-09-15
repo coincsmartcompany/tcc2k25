@@ -6,7 +6,6 @@ import Informacao from '../assets/informacao.png';
 import Grupo from '../assets/grupo.png';
 import ArtigoIcon from '../assets/artigo.png';
 import Controle from '../assets/controlejogo.png';
-import Logo1 from '../assets/logo2.png';
 import DarkModeIcon from '../assets/dark-mode.png';
 import LightModeIcon from '../assets/light-mode.png';
 
@@ -50,13 +49,18 @@ const Artigo = () => {
     }
   };
 
+  // Função para abrir links em nova aba
+  const openInNewTab = (url) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className={`min-h-screen w-full px-4 pt-6 relative ${isDarkMode ? 'bg-gray-900' : 'bg-[#F5F0E1]'} transition-colors duration-300`}>
      
       <div className="md:hidden">
         {/* Código mobile */}
         <div className="absolute top-[21px] left-[25px]">
-          <img src={Logo1} alt="Logo" className="w-[123px] h-[30px] cursor-pointer" onClick={() => navigate('/')} />
+          <img src={Logo} alt="Logo" className="w-[123px] h-[30px] cursor-pointer" onClick={() => navigate('/')} />
         </div>
       
         <div className="absolute top-[21px] right-[25px] flex items-center gap-3 z-50">
@@ -122,7 +126,12 @@ const Artigo = () => {
               </div>
               
               <div className={`bg-transparent border-4 border-[#EC5C8F] rounded-[20px] p-6 h-full flex flex-col justify-center pt-8 ${isDarkMode ? 'bg-gray-800' : ''}`}>
-                <h3 className={`text-base font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center leading-tight mt-2`}>A IMPORTÂNCIA DA EDUCAÇÃO FINANCEIRA INFANTIL</h3>
+                <h3 
+                  className={`text-base font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center leading-tight mt-2 cursor-pointer hover:underline`}
+                  onClick={() => openInNewTab('https://educacaofinanceira.com.br/wp-content/uploads/2021/11/tcc-a-importancia-da-educacao-financeira-infantil.pdf')}
+                >
+                  A IMPORTÂNCIA DA EDUCAÇÃO FINANCEIRA INFANTIL
+                </h3>
                 <hr className={`${isDarkMode ? 'border-gray-400' : 'border-black'} border-1 mb-4 w-full`} />
                 <ul className={`list-disc list-inside ${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} space-y-2 pl-4 text-sm mt-2`}>
                   <li>A educação financeira na infância desenvolve responsabilidade e consciência no uso o dinheiro ao longo da vida.</li>
@@ -138,7 +147,12 @@ const Artigo = () => {
               </div>
               
               <div className={`bg-transparent border-4 border-[#EC5C8F] rounded-[20px] p-6 h-full flex flex-col justify-center pt-8 ${isDarkMode ? 'bg-gray-800' : ''}`}>
-                <h3 className={`text-base font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center leading-tight mt-2`}>EDUCAÇÃO FINANCEIRA COMO PRÁTICA PEDAGÓGICA</h3>
+                <h3 
+                  className={`text-base font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center leading-tight mt-2 cursor-pointer hover:underline`}
+                  onClick={() => openInNewTab('https://periodicos.unemat.br/index.php/reps/article/view/9897/6209')}
+                >
+                  EDUCAÇÃO FINANCEIRA COMO PRÁTICA PEDAGÓGICA
+                </h3>
                 <hr className={`${isDarkMode ? 'border-gray-400' : 'border-black'} border-1 mb-4 w-full`} />
                 <ul className={`list-disc list-inside ${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} space-y-2 pl-4 text-sm mt-2`}>
                   <li>A educação financeira nas escolas forma cidadãos mais conscientes e preparados para lidar com o dinheiro em diferentes contextos da vida.</li>
@@ -154,7 +168,12 @@ const Artigo = () => {
               </div>
             
               <div className={`bg-transparent border-4 border-[#EC5C8F] rounded-[20px] p-6 h-full flex flex-col justify-center pt-8 ${isDarkMode ? 'bg-gray-800' : ''}`}>
-                <h3 className={`text-base font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center leading-tight mt-2`}>EDUCAÇÃO FINANCEIRA INFANTIL</h3>
+                <h3 
+                  className={`text-base font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center leading-tight mt-2 cursor-pointer hover:underline`}
+                  onClick={() => openInNewTab('https://scholar.google.com/scholar?hl=pt-BR&as_sdt=0%2C5&q=batista+educação+financeira+infantil&btnG=#d=gs_qabs&t=1757806220939&u=%23p%3DXVHWjVlUf78J')}
+                >
+                  EDUCAÇÃO FINANCEIRA INFANTIL
+                </h3>
                 <hr className={`${isDarkMode ? 'border-gray-400' : 'border-black'} border-1 mb-4 w-full`} />
                 <ul className={`list-disc list-inside ${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} space-y-2 pl-4 text-sm mt-2`}>
                   <li>A educação financeira infantil é importante para orientar as crianças a gerenciar dinheiro de forma correta, desenvolvendo hábitos financeiros desde cedo.</li>
@@ -170,7 +189,12 @@ const Artigo = () => {
               </div>
       
               <div className={`bg-transparent border-4 border-[#EC5C8F] rounded-[20px] p-6 h-full flex flex-col justify-center pt-10 ${isDarkMode ? 'bg-gray-800' : ''}`}>
-                <h3 className={`text-base font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center leading-tight mt-4`}>A IMPORTÂNCIA DA EDUCAÇÃO FINANCEIRA</h3>
+                <h3 
+                  className={`text-base font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center leading-tight mt-4 cursor-pointer hover:underline`}
+                  onClick={() => openInNewTab('https://periodicos.insted.edu.br/recam/article/view/36/66')}
+                >
+                  A IMPORTÂNCIA DA EDUCAÇÃO FINANCEIRA
+                </h3>
                 <hr className={`${isDarkMode ? 'border-gray-400' : 'border-black'} border-1 mb-4 w-full`} />
                 <ul className={`list-disc list-inside ${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} space-y-2 pl-4 text-sm mt-4`}>
                   <li>O artigo destaca a importância da educação financeira para o desenvolvimento de habilidades que ajudam a tomar decisões conscientes e com responsabilidade.</li>
@@ -240,7 +264,12 @@ const Artigo = () => {
               </div>
               
               <div className={`bg-transparent border-4 border-[#EC5C8F] rounded-[20px] p-6 h-full flex flex-col justify-center ${isDarkMode ? 'bg-gray-800' : ''}`}>
-                <h3 className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center`}>A IMPORTÂNCIA DA EDUCAÇÃO FINANCEIRA INFANTIL</h3>
+                <h3 
+                  className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center cursor-pointer hover:underline`}
+                  onClick={() => openInNewTab('https://educacaofinanceira.com.br/wp-content/uploads/2021/11/tcc-a-importancia-da-educacao-financeira-infantil.pdf')}
+                >
+                  A IMPORTÂNCIA DA EDUCAÇÃO FINANCEIRA INFANTIL
+                </h3>
                 <hr className={`${isDarkMode ? 'border-gray-400' : 'border-black'} border-1 mb-4 mx-[-1.5rem]`} />
                 <ul className={`list-disc list-inside ${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} space-y-2 pl-4 text-sm`}>
                   <li>A educação financeira na infância desenvolve responsabilidade and consciência no uso do dinheiro ao longo da vida.</li>
@@ -256,7 +285,12 @@ const Artigo = () => {
               </div>
               
               <div className={`bg-transparent border-4 border-[#EC5C8F] rounded-[20px] p-6 h-full flex flex-col justify-center ${isDarkMode ? 'bg-gray-800' : ''}`}>
-                <h3 className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center`}>EDUCAÇÃO FINANCEIRA COMO PRÁTICA PEDAGÓGICA</h3>
+                <h3 
+                  className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center cursor-pointer hover:underline`}
+                  onClick={() => openInNewTab('https://periodicos.unemat.br/index.php/reps/article/view/9897/6209')}
+                >
+                  EDUCAÇÃO FINANCEIRA COMO PRÁTICA PEDAGÓGICA
+                </h3>
                 <hr className={`${isDarkMode ? 'border-gray-400' : 'border-black'} border-1 mb-4 mx-[-1.5rem]`} />
                 <ul className={`list-disc list-inside ${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} space-y-2 pl-4 text-sm`}>
                   <li>A educação financeira nas escolas forma cidadãos mais conscientes e preparados para lidar dengan o dinheiro em diferentes contextos da vida.</li>
@@ -272,7 +306,12 @@ const Artigo = () => {
               </div>
  
               <div className={`bg-transparent border-4 border-[#EC5C8F] rounded-[20px] p-6 h-full flex flex-col justify-center ${isDarkMode ? 'bg-gray-800' : ''}`}>
-                <h3 className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center leading-tight mt-10`}>EDUCAÇÃO FINANCEIRA INFANTIL</h3>
+                <h3 
+                  className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center leading-tight mt-10 cursor-pointer hover:underline`}
+                  onClick={() => openInNewTab('https://scholar.google.com/scholar?hl=pt-BR&as_sdt=0%2C5&q=batista+educação+financeira+infantil&btnG=#d=gs_qabs&t=1757806220939&u=%23p%3DXVHWjVlUf78J')}
+                >
+                  EDUCAÇÃO FINANCEIRA INFANTIL
+                </h3>
                 <hr className={`${isDarkMode ? 'border-gray-400' : 'border-black'} border-1 mb-4 mx-[-1.5rem]`} />
                 <ul className={`list-disc list-inside ${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} space-y-2 pl-4 text-sm`}>
                   <li>A educação financeira infantil é importante para orientar as crianças a gerenciar dinheiro de forma correta, desenvolvendo hábitos financeiros desde cedo.</li>
@@ -288,7 +327,12 @@ const Artigo = () => {
               </div>
               
               <div className={`bg-transparent border-4 border-[#EC5C8F] rounded-[20px] p-6 h-full flex flex-col justify-center ${isDarkMode ? 'bg-gray-800' : ''}`}>
-                <h3 className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center leading-tight mt-9`}>A IMPORTÂNCIA DA<br />EDUCAÇÃO FINANCEIRA</h3>
+                <h3 
+                  className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mb-4 text-center leading-tight mt-9 cursor-pointer hover:underline`}
+                  onClick={() => openInNewTab('https://periodicos.insted.edu.br/recam/article/view/36/66')}
+                >
+                  A IMPORTÂNCIA DA<br />EDUCAÇÃO FINANCEIRA
+                </h3>
                 <hr className={`${isDarkMode ? 'border-gray-400' : 'border-black'} border-1 mb-4 mx-[-1.5rem]`} />
                 <ul className={`list-disc list-inside ${isDarkMode ? 'text-gray-300' : 'text-[#1a2e45]'} space-y-2 pl-4 text-sm`}>
                   <li>O artigo destaca a importância da educação financeira para o desenvolvimento de habilidades que ajudam a tomar decisões conscientes e com responsabilidade.</li>
