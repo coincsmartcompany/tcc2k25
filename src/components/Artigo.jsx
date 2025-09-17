@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Logo from '../assets/logo2.png';
+import Logo from '../assets/logodomenu.png';
+import Logo1 from '../assets/logo2.png';
 import Passo from '../assets/passos.png';
 import Informacao from '../assets/informacao.png';
 import Grupo from '../assets/grupo.png';
@@ -14,7 +15,6 @@ const Artigo = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Verificar se há preferência salva no localStorage ao carregar a página
   useEffect(() => {
     const savedDarkMode = localStorage.getItem('darkMode') === 'true';
     setIsDarkMode(savedDarkMode);
@@ -60,7 +60,7 @@ const Artigo = () => {
       <div className="md:hidden">
         {/* Código mobile */}
         <div className="absolute top-[21px] left-[25px]">
-          <img src={Logo} alt="Logo" className="w-[123px] h-[30px] cursor-pointer" onClick={() => navigate('/')} />
+          <img src={Logo1} alt="Logo" className="w-[123px] h-[30px] cursor-pointer" onClick={() => navigate('/')} />
         </div>
       
         <div className="absolute top-[21px] right-[25px] flex items-center gap-3 z-50">

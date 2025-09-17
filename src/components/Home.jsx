@@ -193,7 +193,7 @@ const Home = () => {
         {/* Diferencial */}
         <div className={`py-20 px-12 ${isDarkMode ? 'bg-gray-900' : 'bg-[#F5F0E1]'} transition-colors duration-300`}>
           <div className="max-w-6xl mx-auto">
-            <h2 className={`${isDarkMode ? 'text-white' : 'text-[#1A2E45]'} text-4xl font-bold text-center mb-16`}>
+            <h2 className={`${isDarkMode ? 'text-white' : 'text-[#1A2E45]'} text-4xl font-bold text-center mt-6 mr-160`}>
               Diferencial do Projeto
             </h2>
             
@@ -214,7 +214,7 @@ const Home = () => {
         {/* Público Alvo */}
         <div className={`py-20 px-12 ${isDarkMode ? 'bg-gray-900' : 'bg-[#F5F0E1]'} transition-colors duration-300`}>
           <div className="max-w-6xl mx-auto">
-            <h2 className={`${isDarkMode ? 'text-white' : 'text-[#1A2E45]'} text-4xl font-bold text-center mb-16`}>
+            <h2 className={`${isDarkMode ? 'text-white' : 'text-[#1A2E45]'} text-4xl font-bold text-center mt-6  ml-140`}>
               Público alvo
             </h2>
             <div className="grid grid-cols-2 gap-12 items-center">
@@ -233,7 +233,7 @@ const Home = () => {
         {/* Objetivo */}
         <div className={`py-20 px-12 ${isDarkMode ? 'bg-gray-900' : 'bg-[#F5F0E1]'} transition-colors duration-300`}>
           <div className="max-w-6xl mx-auto">
-            <h2 className={`${isDarkMode ? 'text-white' : 'text-[#1A2E45]'} text-4xl font-bold text-center mb-16`}>
+            <h2 className={`${isDarkMode ? 'text-white' : 'text-[#1A2E45]'} text-4xl font-bold text-center mt-6 mb-2 mr-160`}>
               Objetivo
             </h2>
             <div className="grid grid-cols-2 gap-12 items-center">

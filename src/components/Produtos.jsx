@@ -158,7 +158,8 @@ const Produtos = () => {
             { img: cartao, nome: 'Cartão de Memória', preco: 'R$15,96' },
           ].map((item, index) => (
             <div key={index} className="flex flex-col items-center">
-              <div className={`${isDarkMode ? 'bg-gray-800' : 'bg-white'} p-4 shadow-md`}>
+              {/* Alteração: removida a condicional para manter sempre fundo branco */}
+              <div className="bg-white p-4 shadow-md">
                 <img src={item.img} alt={item.nome} className="w-[150px] h-[150px] object-contain" />
               </div>
               <p className={`font-nunito font-semibold mt-2 ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'}`}>{item.nome}</p>
@@ -259,7 +260,8 @@ const Produtos = () => {
                 { img: cartao, nome: 'Cartão de Memória', preco: 'R$15,96' },
               ].map((item, index) => (
                 <div key={index} className="flex flex-col items-center">
-                  <div className={`${isDarkMode ? 'bg-gray-800' : 'bg-white'} p-6 shadow-md`}>
+                  {/* Alteração: removida a condicional para manter sempre fundo branco */}
+                  <div className="bg-white p-6 shadow-md">
                     <img src={item.img} alt={item.nome} className="w-[180px] h-[180px] object-contain mb-4" />
                   </div>
                   <p className={`font-semibold text-lg ${isDarkMode ? 'text-white' : 'text-[#1a2e45]'} mt-2`}>{item.nome}</p>
